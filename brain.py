@@ -49,7 +49,7 @@ def msg_handler(info):
 
         elif 'rastr' in msg_text:
         	words = [list(x) for x in msg_text.replace(',', '').split()]
-        	codes = get_codes()
+        	codes = get_codes(words)
         	if codes:
         		for code in codes:
         			statuses = get_package_status(code)

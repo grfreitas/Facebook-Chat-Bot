@@ -2,9 +2,6 @@ from lxml import html
 import requests
 from bs4 import BeautifulSoup
 
-codigo = 'PP981511488BR'
-
-
 def get_codes(words):
     # code must be in the format 'AA123456789XX'
     codes = []
@@ -23,10 +20,11 @@ def get_codes(words):
         return codes
 
 
-def get_package_status(code)
+def get_package_status(code):
     URL = f'http://rastreamentocorreios.info/consulta/{code}'
     page = requests.get(URL)
     soup = BeautifulSoup(page.text, 'html.parser')
+    responses = []
 
     for i in range(len(soup.find_all('li'))):
 
